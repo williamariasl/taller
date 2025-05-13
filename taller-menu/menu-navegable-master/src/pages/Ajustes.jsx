@@ -1,43 +1,73 @@
 function Ajustes() {
   const layoutStyle = {
-    maxWidth: '700px',
+    maxWidth: '600px',
     margin: '2rem auto',
     padding: '2rem',
-    backgroundColor: '#edf2f7',
-    borderRadius: '8px',
-    fontFamily: 'Tahoma, sans-serif',
-    color: '#2d3748',
+    backgroundColor: '#ffffff',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    borderRadius: '12px',
+    fontFamily: 'Arial, sans-serif',
+    color: '#1a202c',
   };
 
   const titleStyle = {
-    fontSize: '1.7rem',
-    marginBottom: '1rem',
-    borderBottom: '2px solid #cbd5e0',
-    paddingBottom: '0.5rem',
+    fontSize: '1.8rem',
+    marginBottom: '1.5rem',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#2b6cb0',
   };
 
   const sectionStyle = {
-    marginBottom: '1.2rem',
+    marginBottom: '1.5rem',
   };
 
   const labelStyle = {
     display: 'block',
-    marginBottom: '0.4rem',
+    marginBottom: '0.5rem',
     fontSize: '1rem',
     fontWeight: '600',
+    color: '#4a5568',
   };
 
   const selectStyle = {
-    padding: '8px 12px',
-    borderRadius: '4px',
-    border: '1px solid #a0aec0',
+    padding: '10px 14px',
+    borderRadius: '6px',
+    border: '1px solid #cbd5e0',
     fontSize: '1rem',
-    width: '250px',
+    width: '100%',
+    boxSizing: 'border-box',
+  };
+
+  const checkboxContainerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+    marginTop: '0.5rem',
   };
 
   const checkboxStyle = {
-    marginRight: '10px',
     transform: 'scale(1.2)',
+    cursor: 'pointer',
+  };
+
+  const buttonStyle = {
+    display: 'block',
+    width: '100%',
+    padding: '12px',
+    backgroundColor: '#2b6cb0',
+    color: '#ffffff',
+    fontSize: '1rem',
+    fontWeight: 'bold',
+    border: 'none',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    marginTop: '1rem',
+    transition: 'background-color 0.3s ease',
+  };
+
+  const buttonHoverStyle = {
+    backgroundColor: '#2c5282',
   };
 
   return (
@@ -53,11 +83,19 @@ function Ajustes() {
         </div>
         <div style={sectionStyle}>
           <label style={labelStyle}>Preferencias:</label>
-          <label>
+          <div style={checkboxContainerStyle}>
             <input type="checkbox" style={checkboxStyle} />
-            Habilitar alertas por correo
-          </label>
+            <span>Habilitar alertas por correo</span>
+          </div>
         </div>
+        <button
+          type="submit"
+          style={buttonStyle}
+          onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+          onMouseOut={(e) => (e.target.style.backgroundColor = buttonStyle.backgroundColor)}
+        >
+          Guardar Cambios
+        </button>
       </form>
     </div>
   );

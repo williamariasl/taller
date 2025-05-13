@@ -5,19 +5,30 @@ function Inicio() {
     justifyContent: 'center',
     alignItems: 'center',
     height: '70vh',
-    backgroundColor: '#f9fafb',
+    backgroundColor: '#e2e8f0', // Changed color
     fontFamily: 'Segoe UI, sans-serif',
+    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+    borderRadius: '12px',
+    padding: '20px',
+    margin: '20px',
   };
 
   const textStyle = {
-    fontSize: '1.8rem',
-    color: '#2d3748',
+    fontSize: '2rem',
+    color: '#2c5282',
     textAlign: 'center',
+    fontWeight: 'bold',
+  };
+
+  const emojiStyle = {
+    fontSize: '3rem',
+    marginBottom: '10px',
   };
 
   return (
     <div style={boxStyle}>
-      <p style={textStyle}>👋 ¡Hola! Estás en la plataforma principal</p>
+      <div style={emojiStyle}>👋</div>
+      <p style={textStyle}>¡Hola! Estás en la plataforma principal</p>
     </div>
   );
 }

@@ -1,43 +1,53 @@
 function Choferes() {
   const choferesMock = [
-    'Santiago Pérez',
-    'Martín González',
-    'Camilo Herrera',
-    'Oscar Medina',
-    'Sebastián Ruiz',
-    'Pedro Valdés',
-    'Iván Castaño',
+    'Carlos Ramírez',
+    'Luis Fernández',
+    'Andrés López',
+    'Jorge Martínez',
+    'Felipe Torres',
+    'Diego Vargas',
+    'Héctor Salinas',
   ];
 
   const containerStyle = {
     maxWidth: '900px',
     margin: '2rem auto',
-    padding: '1rem',
-    backgroundColor: '#f0f0f0',
-    borderRadius: '8px',
-    fontFamily: 'Verdana, sans-serif',
+    padding: '1.5rem',
+    backgroundColor: '#f9fafb',
+    borderRadius: '12px',
+    fontFamily: 'Arial, sans-serif',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
   };
 
   const headingStyle = {
-    fontSize: '1.6rem',
-    color: '#1a202c',
-    marginBottom: '1.2rem',
-    textAlign: 'left',
+    fontSize: '2rem',
+    color: '#2d3748',
+    marginBottom: '1.5rem',
+    textAlign: 'center',
+    fontWeight: 'bold',
   };
 
   const gridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    gap: '1rem',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+    gap: '1.5rem',
   };
 
   const cardStyle = {
     backgroundColor: '#ffffff',
-    padding: '1rem',
-    borderRadius: '6px',
-    boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-    fontSize: '1rem',
-    color: '#2d3748',
+    padding: '1.2rem',
+    borderRadius: '10px',
+    boxShadow: '0 3px 6px rgba(0, 0, 0, 0.1)',
+    fontSize: '1.1rem',
+    color: 'red',
+    textAlign: 'center',
+    transition: 'transform 0.2s, box-shadow 0.2s',
+    cursor: 'pointer',
+  };
+
+  const cardHoverStyle = {
+    transform: 'scale(1.05)',
+    boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
   };
 
   return (
@@ -45,7 +55,18 @@ function Choferes() {
       <h2 style={headingStyle}>🚌 Lista de Choferes Registrados</h2>
       <div style={gridStyle}>
         {choferesMock.map((nombre, idx) => (
-          <div key={idx} style={cardStyle}>
+          <div
+            key={idx}
+            style={cardStyle}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = cardHoverStyle.transform;
+              e.currentTarget.style.boxShadow = cardHoverStyle.boxShadow;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.boxShadow = cardStyle.boxShadow;
+            }}
+          >
             {nombre}
           </div>
         ))}
